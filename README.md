@@ -1,16 +1,37 @@
-# React + Vite
+# React Task Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A to-do list app built with React + Tailwind CSS for Vortex Tech's Web Development Internship Track (Week 3).
+live demo https://taskmanager.iqraashraf.dev/
 
-Currently, two official plugins are available:
+Preview video
+https://github.com/user-attachments/assets/cb97ad6b-8155-465e-adfd-6b1abfdc13ff
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## React Compiler
+## Features
+- Add tasks (with duplicate-task detection)
+- Mark tasks complete (strikethrough, without removing them)
+- Delete tasks
+- Tasks persist across refreshes via `localStorage`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
+- React (Vite)
+- Tailwind CSS
+- `useState` / `useEffect` hooks
 
-## Expanding the ESLint configuration
+## Components
+- **App** — holds the `tasks` array in state (`useState`) and the add/toggle/delete logic
+- **TaskInput** — controlled text input + add button
+- **TaskList** — maps over `tasks` and renders a `TaskItem` for each
+- **TaskItem** — a single task's checkbox, text, and delete button
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Running locally
+```bash
+npm install
+npm run dev
+```
+Then open the local URL Vite prints (usually `http://localhost:5173`).
+
+## Build
+```bash
+npm run build
+```
